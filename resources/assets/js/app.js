@@ -14,9 +14,8 @@ require('./bootstrap');
  */
 
 var dateFormat = require('dateformat');
-var VueResource = require('vue-resource');
 
-Vue.use(VueResource);
+import Example from './components/Example.vue';
 
 function addDays(date, days) {
     var result = new Date(date);
@@ -26,6 +25,7 @@ function addDays(date, days) {
 
 const app = new Vue({
     el: '#app',
+    components: { Example },
     data: {
         start_date: null,
         end_date: null,
