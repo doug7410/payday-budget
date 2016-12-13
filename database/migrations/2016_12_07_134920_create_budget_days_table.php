@@ -15,7 +15,10 @@ class CreateBudgetDaysTable extends Migration
     {
         Schema::create('budget_days', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->integer('budget_id');
+            $table->date('date');
+            $table->integer('start_amount');
+            $table->integer('spent_amount')->default(0);
         });
     }
 

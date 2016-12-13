@@ -18,4 +18,5 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:api');
 
 Route::resource('budget', 'Api\BudgetController');
+Route::resource('daily_transaction', 'Api\DailyTransactionController');
 
