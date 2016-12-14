@@ -1,32 +1,18 @@
 <template>
     <div>
-        <div>{{ amount }}</div>
+        <div>{{ formattedAmount }}</div>
     </div>
 </template>
 
 <script>
-    import bus from '../EventBus';
-
     export default{
-        data(){
-            return{
-                budget: []
-            }
-        },
-        props: ['initialBudget'],
-
-        created() {
-            this.budget = JSON.parse(this.initialBudget);
-
-            bus.$on('transaction-created', budget => {
-                this.budget = budget;
-            })
-        },
+        props: ['amount'],
 
         computed: {
-            amount() {
-                return this.budget.overUnderAmount;
+            formattedAmount() {
+                return '$'+this.amount;
             }
+
         }
     }
 </script>

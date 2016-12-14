@@ -28,7 +28,7 @@
                 <div class="col-sm-4">
                     <h5>Over/Under</h5>
                     <div class="info-cell">
-                        {{ budget.overUnderAmount }}
+                        <budget-over-under :amount="budget.overUnderAmount"></budget-over-under>
                     </div>
                 </div>
             </div>
@@ -47,6 +47,7 @@
     import TransactionForm from '../components/TransactionForm.vue';
     import BudgetDaysTable from '../components/BudgetDaysTable.vue';
     import TransactionList from '../components/TransactionList.vue';
+    import BudgetOverUnder from '../components/BudgetOverUnder.vue';
 
     import bus from '../EventBus';
 
@@ -68,6 +69,6 @@
 
         props: ['budgetJson'],
 
-        components: { TransactionForm, BudgetDaysTable, TransactionList }
+        components: { TransactionForm, BudgetDaysTable, TransactionList, BudgetOverUnder }
     }
 </script>
