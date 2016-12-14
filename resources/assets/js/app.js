@@ -15,14 +15,15 @@ require('./bootstrap');
 
 var dateFormat = require('dateformat');
 
-import BudgetDaysTable from './components/BudgetDaysTable.vue';
-import TransactionForm from './components/TransactionForm.vue';
-import TransactionList from './components/TransactionList.vue';
-import BudgetOverUnder from './components/BudgetOverUnder.vue';
+import DailyBudgetPage from './pages/DailyBudgetPage.vue';
+
+import store from './Store';
+
 
 const app = new Vue({
     el: '#app',
-    components: { BudgetDaysTable, TransactionForm, TransactionList, BudgetOverUnder },
+    store,
+    components: { DailyBudgetPage },
     data: {
 
     },

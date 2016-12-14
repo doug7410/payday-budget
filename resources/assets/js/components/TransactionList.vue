@@ -3,10 +3,12 @@
         <h5>Transactions</h5>
         <table class="table table-bordered table-sm">
             <tr>
+                <td>Date</td>
                 <th>Desc</th>
                 <th>Amount</th>
             </tr>
-            <tr v-for="transaction in dailyTransactions">
+            <tr v-for="transaction in transactions">
+                <td>{{ transaction.date }}</td>
                 <td>{{ transaction.description }}</td>
                 <td>{{ transaction.amount }}</td>
             </tr>
@@ -22,13 +24,6 @@
             return {
                 dailyTransactions: {}
             }
-        },
-        created() {
-            this.dailyTransactions = JSON.parse(this.transactions);
-
-            bus.$on('transaction-created', budget => {
-                this.dailyTransactions = budget.daily_transactions;
-            })
         },
         props: ['transactions'],
     }

@@ -22,21 +22,14 @@
     import bus from '../EventBus';
 
     export default {
-        data() {
-            return {
-                budgetDays: []
-            }
-        },
-
-        props: ['initialBudgetDays'],
+        props: ['budgetDays'],
 
         created() {
-            this.budgetDays = JSON.parse(this.initialBudgetDays);
-
-            bus.$on('transaction-created', budget => {
-                this.budgetDays = budget.budget_days;
-            })
+          //  bus.$on('transaction-created', budget => {
+          //      this.budgetDays = budget.budget_days;
+          //  })
         },
+
         computed: {
             formattedBudgetDays () {
                 return this.budgetDays.map(day => {

@@ -45,7 +45,8 @@ class BudgetController extends Controller
 
     public function show($id)
     {
-        $budget = Budget::findOrFail($id);
+        $budget = Budget::with(['budgetDays', 'dailyTransactions'])->where('id', $id)->first();
+
 
         return view('budget.show')->with(compact('budget'));
     }

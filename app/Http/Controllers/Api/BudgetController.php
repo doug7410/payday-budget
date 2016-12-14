@@ -10,6 +10,6 @@ class BudgetController extends Controller
 {
     public function show($id)
     {
-        return Budget::find($id);
+        return Budget::with(['budgetDays', 'dailyTransactions'])->where('id', $id)->first();
     }
 }

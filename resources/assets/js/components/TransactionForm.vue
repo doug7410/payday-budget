@@ -36,6 +36,7 @@
         props: {
             budgetId: {}
         },
+
         methods: {
             addTransaction(){
                 this.$http.post('/api/daily_transaction', {
@@ -43,6 +44,8 @@
                     description: this.description,
                     amount: this.amount
                 }).then((budget) => {
+                    this.description = null;
+                    this.amount = null;
                     bus.$emit('transaction-created', budget.data);
                 }, (response) => {
                     // error callback
