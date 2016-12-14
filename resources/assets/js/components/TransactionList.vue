@@ -20,11 +20,6 @@
     import bus from '../EventBus';
 
     export default{
-        data(){
-            return {
-                dailyTransactions: {}
-            }
-        },
-        props: ['transactions'],
+        props: ['transactions']
     }
 </script>

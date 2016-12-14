@@ -24,12 +24,6 @@
     export default {
         props: ['budgetDays'],
 
-        created() {
-          //  bus.$on('transaction-created', budget => {
-          //      this.budgetDays = budget.budget_days;
-          //  })
-        },
-
         computed: {
             formattedBudgetDays () {
                 return this.budgetDays.map(day => {
