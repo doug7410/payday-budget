@@ -20,7 +20,7 @@
             <div class="form-group row">
                 <label for="start_amount" class="col-sm-2 col-form-label">Start Amount</label>
                 <div class="col-sm-4">
-                    <input type="number" class="form-control" id="start_amount" name="start_amount" placeholder="1500.00">
+                    <input type="number" step="0.01" class="form-control" id="start_amount" name="start_amount" placeholder="1500.00">
                 </div>
             </div>
             <div class="form-group row">

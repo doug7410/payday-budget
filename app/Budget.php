@@ -6,35 +6,46 @@ use Illuminate\Database\Eloquent\Model;
 class Budget extends Model
 {
     protected $table = 'budgets';
-    protected $appends = ['overUnderAmount'];
-
-    public function getOverUnderAmountAttribute()
-    {
-        return $this->getOverUnderAmount();
-    }
-
     protected $fillable = ['start_date', 'end_date', 'start_amount'];
+    protected $appends = ['overUnderAmount', 'totalExpenses', 'remainingAfterExpenses'];
 
-
-
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function budgetDays()
     {
         return $this->hasMany(BudgetDay::class);
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
+     */
+    public function dailyTransactions()
+    {
+        return $this->hasManyThrough(DailyTransaction::class, BudgetDay::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function expenses()
+    {
+        return $this->hasMany(BudgetExpense::class);
+    }
+
+    /**
+     * @return mixed
+     */
     public function currentBudgetDay()
     {
         $today = Carbon::today()->startOfDay()->format('Y-m-d');
         return $this->budgetDays()->where('date', $today)->first();
     }
 
-    public function dailyTransactions()
-    {
-        return $this->hasManyThrough(DailyTransaction::class, BudgetDay::class);
-    }
-
-
-    public function getOverUnderAmount()
+    /**
+     * @return int
+     */
+    public function getOverUnderAmountAttribute()
     {
         $overUnder = 0;
         $today = Carbon::today();
@@ -48,4 +59,21 @@ class Budget extends Model
 
         return $overUnder;
     }
+
+    /**
+ * @return int
+ */
+    public function getTotalExpensesAttribute()
+    {
+        return $this->expenses->pluck('amount')->sum();
+    }
+
+    /**
+     * @return int
+     */
+    public function getRemainingAfterExpensesAttribute()
+    {
+        return $this->start_amount - $this->totalExpenses;
+    }
+
 }

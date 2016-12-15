@@ -11,7 +11,7 @@
             <div class="form-group row">
                 <label for="amount" class="col-sm-4 col-form-label">Amount</label>
                 <div class="col-sm-8">
-                    <input type="number" v-model="amount" class="form-control" id="amount" name="amount">
+                    <input type="number" step="0.01" v-model="amount" class="form-control" id="amount" name="amount">
                 </div>
             </div>
             <div class="form-group row">
@@ -24,8 +24,6 @@
 </template>
 
 <script>
-    import bus from '../EventBus';
-
     export default{
         data(){
             return{
@@ -33,23 +31,19 @@
                 amount: this.amount
             }
         },
-        props: {
-            budgetId: {}
-        },
+
+        props: ['budgetId'],
 
         methods: {
             addTransaction(){
-                this.$http.post('/api/daily_transaction', {
+                this.$store.dispatch('addTransaction', {
                     budget_id: this.budgetId,
                     description: this.description,
                     amount: this.amount
-                }).then((budget) => {
+                }).then(() => {
                     this.description = null;
                     this.amount = null;
-                    bus.$emit('transaction-created', budget.data);
-                }, (response) => {
-                    // error callback
-                });
+                })
             }
         }
     }

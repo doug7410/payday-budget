@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDailyTransactionsTable extends Migration
+class CreateBudgetExpensesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateDailyTransactionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('daily_transactions', function (Blueprint $table) {
+        Schema::create('budget_expenses', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('budget_day_id');
+            $table->integer('budget_id');
             $table->string('description');
             $table->float('amount', 8, 2);
+            $table->timestamps();
         });
     }
 
@@ -28,6 +29,6 @@ class CreateDailyTransactionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('daily_transactions');
+        Schema::dropIfExists('budget_expenses');
     }
 }

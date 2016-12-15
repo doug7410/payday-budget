@@ -19,4 +19,5 @@ Route::get('/user', function (Request $request) {
 
 Route::resource('budget', 'Api\BudgetController');
 Route::resource('daily_transaction', 'Api\DailyTransactionController');
+Route::resource('budget/{budgetId}/expenses', 'Api\BudgetExpenseController');
 

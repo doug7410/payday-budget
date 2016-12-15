@@ -6,12 +6,13 @@ use App\Budget;
 use app\BudgetDay;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class BudgetController extends Controller
 {
 
     /**
-     *
+     * @return View
      */
     public function index()
     {
@@ -19,11 +20,19 @@ class BudgetController extends Controller
             'budgets' => Budget::all()
         ]);
     }
+
+    /**
+     * @return View
+     */
     public function create()
     {
         return view('budget.create');
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function store(Request $request)
     {
         $budget = Budget::create($request->input());
@@ -43,11 +52,12 @@ class BudgetController extends Controller
         return redirect()->action('BudgetController@index');
     }
 
+    /**
+     * @param $id
+     * @return $this
+     */
     public function show($id)
     {
-        $budget = Budget::with(['budgetDays', 'dailyTransactions'])->where('id', $id)->first();
-
-
-        return view('budget.show')->with(compact('budget'));
+        return view('budget.show')->with(compact('id'));
     }
 }

@@ -13,3 +13,4 @@
 
 Route::get('/', ['uses' => 'HomeController@index']);
 Route::resource('budget', 'BudgetController');
+Route::resource('/budget/{budgetId}/expenses', 'BudgetExpenseController');

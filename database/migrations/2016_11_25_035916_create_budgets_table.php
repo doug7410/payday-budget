@@ -17,7 +17,7 @@ class CreateBudgetsTable extends Migration
             $table->increments('id');
             $table->date('start_date');
             $table->date('end_date');
-            $table->integer('start_amount');
+            $table->float('start_amount', 8, 2);
             $table->timestamps();
         });
     }

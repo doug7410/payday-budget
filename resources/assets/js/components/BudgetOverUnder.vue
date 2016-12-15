@@ -1,18 +1,28 @@
 <template>
     <div>
-        <div>{{ formattedAmount }}</div>
+        <span :class="textColor">
+            {{ formattedAmount }}
+        </span>
     </div>
 </template>
 
 <script>
     export default{
-        props: ['amount'],
-
+        props: ['overUnderAmount'],
         computed: {
+            textColor() {
+                return (this.overUnderAmount < 0) ? 'txtRed' : '';
+            },
             formattedAmount() {
-                return '$'+this.amount;
+                const amount = this.overUnderAmount.toString().replace('-','');
+                return `$${amount}`;
             }
-
         }
     }
 </script>
+
+<style>
+    .txtRed{
+        color: red;
+    }
+</style>

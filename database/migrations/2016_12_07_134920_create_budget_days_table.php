@@ -17,8 +17,8 @@ class CreateBudgetDaysTable extends Migration
             $table->increments('id');
             $table->integer('budget_id');
             $table->date('date');
-            $table->integer('start_amount');
-            $table->integer('spent_amount')->default(0);
+            $table->float('start_amount', 8, 2);
+            $table->float('spent_amount', 8, 2)->default(0);
         });
     }
 

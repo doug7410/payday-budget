@@ -16,6 +16,7 @@ require('./bootstrap');
 var dateFormat = require('dateformat');
 
 import DailyBudgetPage from './pages/DailyBudgetPage.vue';
+import BudgetExpensePage from './pages/ExpensePage.vue';
 
 import store from './Store';
 
@@ -23,7 +24,7 @@ import store from './Store';
 const app = new Vue({
     el: '#app',
     store,
-    components: { DailyBudgetPage },
+    components: { DailyBudgetPage, BudgetExpensePage },
     data: {
 
     },

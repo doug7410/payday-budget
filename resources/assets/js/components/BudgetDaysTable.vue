@@ -8,7 +8,7 @@
                 <th>Spent</th>
                 <th>Remaining</th>
             </tr>
-            <tr v-for="day in formattedBudgetDays">
+            <tr v-for="day in budgetDays">
                 <td>{{ day.date }}</td>
                 <td>{{ day.start_amount }}</td>
                 <td>{{ day.spent_amount }}</td>
@@ -19,18 +19,7 @@
 </template>
 
 <script>
-    import bus from '../EventBus';
-
     export default {
-        props: ['budgetDays'],
-
-        computed: {
-            formattedBudgetDays () {
-                return this.budgetDays.map(day => {
-                    day.remaining = day.start_amount - day.spent_amount;
-                    return day
-                });
-            }
-        }
+        props: ['budgetDays']
     }
 </script>

@@ -7,7 +7,7 @@
                 <th>Desc</th>
                 <th>Amount</th>
             </tr>
-            <tr v-for="transaction in sortedTransactions">
+            <tr v-for="transaction in transactions">
                 <td>{{ transaction.date }}</td>
                 <td>{{ transaction.description }}</td>
                 <td>{{ transaction.amount }}</td>
@@ -17,14 +17,7 @@
 </template>
 
 <script>
-    import bus from '../EventBus';
-
     export default{
-        props: ['transactions'],
-        computed: {
-            sortedTransactions() {
-                return this.transactions.reverse();
-            }
-        }
+        props: ['transactions']
     }
 </script>
