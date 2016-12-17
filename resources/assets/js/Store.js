@@ -33,6 +33,7 @@ export default new Vuex.Store({
         budgetDays: (store) => {
             return store.budget.budget_days.map(day => {
                 day.remaining = day.start_amount - day.spent_amount;
+                day.remaining = day.remaining.toFixed(2);
                 return day
             });
         },
