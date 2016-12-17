@@ -3,7 +3,7 @@
     <div class="container" v-if="budgetLoading || expensesLoading">
         Loading...
     </div>
-    <div class="container" v-else>
+    <div v-else>
         <div class="row">
                 <div class="col-sm-4">
                     <div class="info-cell border-right">
@@ -26,7 +26,7 @@
                                 <td>{{ budget.totalExpenses }}</td>
                             </tr>
                             <tr>
-                                <th>Remaining</th>
+                                <th>Daily Budget</th>
                                 <td>{{ budget.remainingAfterExpenses }}</td>
                             </tr>
                         </table>

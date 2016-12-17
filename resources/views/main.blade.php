@@ -21,7 +21,7 @@
     <div id="app">
         @include('partials.top-nav')
 
-        <div class="container">
+        <div class="container-fluid">
 
             <div class="starter-template">
                 @yield('content')
