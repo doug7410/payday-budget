@@ -22,7 +22,7 @@ class Budget extends Model
      */
     public function dailyTransactions()
     {
-        return $this->hasManyThrough(DailyTransaction::class, BudgetDay::class);
+        return $this->hasMany(DailyTransaction::class);
     }
 
     /**
@@ -32,6 +32,7 @@ class Budget extends Model
     {
         return $this->hasMany(BudgetExpense::class);
     }
+
 
     /**
      * @return mixed
