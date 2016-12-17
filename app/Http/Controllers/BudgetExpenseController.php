@@ -1,11 +1,8 @@
 <?php namespace App\Http\Controllers;
 
 
-use App\Budget;
-
-class BudgetExpenseController
+class BudgetExpenseController extends Controller
 {
-
 
     public function create($budgetId)
     {
