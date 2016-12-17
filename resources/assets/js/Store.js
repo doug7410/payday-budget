@@ -31,13 +31,10 @@ export default new Vuex.Store({
     },
     getters: {
         budgetDays: (store) => {
-            return store.budget.budget_days.map(day => {
-                day.remaining = day.start_amount - day.spent_amount;
-                return day
-            });
+            return store.budget.budgetDays;
         },
         transactions: (store) => {
-            return store.budget.daily_transactions.reverse();
+            return store.budget.transactions.reverse();
         }
     },
     mutations: {

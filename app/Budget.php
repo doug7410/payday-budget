@@ -1,24 +1,33 @@
 <?php namespace App;
 
-use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use App\ModelTraits\BudgetGetterMethods;
+use Illuminate\Database\Eloquent\Collection;
 
+/**
+ * Class Budget
+ * @package App
+ * @property Collection expenses
+ * @property Budget budgetDays
+ * @property integer start_amount
+ * @property Collection transactions
+ * @property integer totalExpenses
+ * @property Budget overUnderAmount
+ * @property Budget dailyTransactions
+ * @property Budget remainingAfterExpenses
+*/
 class Budget extends Model
 {
+    use BudgetGetterMethods;
+
     protected $table = 'budgets';
+    protected $dates = ['start_date', 'end_date'];
     protected $fillable = ['start_date', 'end_date', 'start_amount'];
-    protected $appends = ['overUnderAmount', 'totalExpenses', 'remainingAfterExpenses'];
+    protected $appends = ['overUnderAmount', 'totalExpenses', 'remainingAfterExpenses', 'budgetDays', 'transactions'];
+
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function budgetDays()
-    {
-        return $this->hasMany(BudgetDay::class);
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
      */
     public function dailyTransactions()
     {
@@ -33,48 +42,5 @@ class Budget extends Model
         return $this->hasMany(BudgetExpense::class);
     }
 
-
-    /**
-     * @return mixed
-     */
-    public function currentBudgetDay()
-    {
-        $today = Carbon::today()->startOfDay()->format('Y-m-d');
-        return $this->budgetDays()->where('date', $today)->first();
-    }
-
-    /**
-     * @return int
-     */
-    public function getOverUnderAmountAttribute()
-    {
-        $overUnder = 0;
-        $today = Carbon::today();
-        foreach ($this->budgetDays as $day)
-        {
-            if($day->date <= $today)
-            {
-                $overUnder += ($day->start_amount - $day->spent_amount);
-            }
-        }
-
-        return $overUnder;
-    }
-
-    /**
- * @return int
- */
-    public function getTotalExpensesAttribute()
-    {
-        return $this->expenses->pluck('amount')->sum();
-    }
-
-    /**
-     * @return int
-     */
-    public function getRemainingAfterExpensesAttribute()
-    {
-        return $this->start_amount - $this->totalExpenses;
-    }
 
 }
