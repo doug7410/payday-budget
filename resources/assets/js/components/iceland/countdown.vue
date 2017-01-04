@@ -1,22 +1,21 @@
 <template>
     <div id="countdown">
-            <h1>Leaving for Iceland {{ tripDate }}</h1>
-            <div class="block">
-                <p class="digit">{{ timeRemaining.days | two_digits }}</p>
-                <p class="text">Days</p>
-            </div>
-            <div class="block">
-                <p class="digit">{{ timeRemaining.hours | two_digits }}</p>
-                <p class="text">Hours</p>
-            </div>
-            <div class="block">
-                <p class="digit">{{ timeRemaining.minutes | two_digits }}</p>
-                <p class="text">Minutes</p>
-            </div>
-            <div class="block">
-                <p class="digit">{{ timeRemaining.seconds | two_digits }}</p>
-                <p class="text">Seconds</p>
-            </div>
+        <div class="block">
+            <p class="digit">{{ timeRemaining.days | two_digits }}</p>
+            <p class="text">Days</p>
+        </div>
+        <div class="block">
+            <p class="digit">{{ timeRemaining.hours | two_digits }}</p>
+            <p class="text">Hours</p>
+        </div>
+        <div class="block">
+            <p class="digit">{{ timeRemaining.minutes | two_digits }}</p>
+            <p class="text">Minutes</p>
+        </div>
+        <div class="block">
+            <p class="digit">{{ timeRemaining.seconds | two_digits }}</p>
+            <p class="text">Seconds</p>
+        </div>
     </div>
 </template>
 
