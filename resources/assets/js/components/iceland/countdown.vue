@@ -1,4 +1,5 @@
 <template>
+
     <div id="countdown">
         <div class="block">
             <p class="digit">{{ timeRemaining.days | two_digits }}</p>
