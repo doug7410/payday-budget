@@ -8,4 +8,9 @@ class HomeController extends Controller
         return view('main');
     }
 
+    public function iceland()
+    {
+        return view('iceland');
+    }
+
 }
