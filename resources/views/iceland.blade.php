@@ -19,7 +19,8 @@
 
 <body>
     <div id="iceland">
-        <countdown trip-date="February 11, 2017"></countdown>
+        jdjdjdj
+        {{--<countdown trip-date="February 11, 2017"></countdown>--}}
     </div>
 
 
