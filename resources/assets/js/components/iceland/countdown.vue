@@ -1,21 +1,23 @@
 <template>
-
     <div id="countdown">
         <div class="block">
-            <p class="digit">{{ timeRemaining.days | two_digits }}</p>
-            <p class="text">Days</p>
+            <div class="number">{{ timeRemaining.days | two_digits }}</div>
+            <div class="text">Days</div>
         </div>
+        <div class="spacer">:</div>
         <div class="block">
-            <p class="digit">{{ timeRemaining.hours | two_digits }}</p>
-            <p class="text">Hours</p>
+            <div class="number">{{ timeRemaining.hours | two_digits }}</div>
+            <div class="text">Hours</div>
         </div>
+        <div class="spacer">:</div>
         <div class="block">
-            <p class="digit">{{ timeRemaining.minutes | two_digits }}</p>
-            <p class="text">Minutes</p>
+            <div class="number">{{ timeRemaining.minutes | two_digits }}</div>
+            <div class="text">Minutes</div>
         </div>
+        <div class="spacer">:</div>
         <div class="block">
-            <p class="digit">{{ timeRemaining.seconds | two_digits }}</p>
-            <p class="text">Seconds</p>
+            <div class="number">{{ timeRemaining.seconds | two_digits }}</div>
+            <div class="text">Seconds</div>
         </div>
     </div>
 </template>
@@ -70,43 +72,34 @@
 
 </script>
 
-<style>
-    @import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400|Roboto:100);
+<style type="scss">
+    @import url('https://fonts.googleapis.com/css?family=Abel');
 
     #countdown {
-        align-items: center;
-        bottom: 0;
-        background-color: #34495e;
+        font-family: 'Abel', sans-serif;
+        padding: 2em 1em;
+        background-color: rgba(21, 26, 62, 0.79);
+        color: #fff;
         display: flex;
-        justify-content: center;
-        left: 0;
-        position: absolute;
-        right: 0;
-        top:0;
+        justify-content: space-around;
     }
 
     .block {
         display: flex;
         flex-direction: column;
-        margin: 20px;
+        justify-content: center;
+        align-items: center;
+        width: 25%;
     }
 
-    .text {
-        color: #1abc9c;
-        font-size: 40px;
-        font-family: 'Roboto Condensed', serif;
-        font-weight: 40;
-        margin-top:10px;
-        margin-bottom: 10px;
-        text-align: center;
+    .number {
+        font-size: 3em;
     }
 
-    .digit {
-        color: #ecf0f1;
-        font-size: 150px;
-        font-weight: 100;
-        font-family: 'Roboto', serif;
-        margin: 10px;
-        text-align: center;
+    .spacer {
+        font-size: 2em;
+        align-self: flex-start;
+        margin-top: .3em;
     }
+
 </style>

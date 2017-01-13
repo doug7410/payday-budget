@@ -1,2 +1,40 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0; }
+
+body {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  background-image: url("../images/iceland.jpg");
+  background-size: cover;
+  font-family: 'Courgette', cursive; }
+
+#iceland {
+  width: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  height: 100%; }
+
+.trip-info {
+  background-color: rgba(21, 26, 62, 0.5);
+  color: #fff;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  padding-bottom: 2em; }
 
 /*# sourceMappingURL=iceland.css.map */

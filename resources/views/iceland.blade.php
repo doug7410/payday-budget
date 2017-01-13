@@ -12,6 +12,7 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Abel|Courgette" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/iceland.css') }}" rel="stylesheet">
@@ -19,8 +20,17 @@
 
 <body>
     <div id="iceland">
-        jdjdjdj
-        {{--<countdown trip-date="February 11, 2017"></countdown>--}}
+        <div class="trip-info">
+            <h1>Countdown to Iceland!</h1>
+            <div class="info">
+                <strong>Trip Date: </strong>
+                <span>February 11, 2017</span>
+            </div>
+        </div>
+        <div class="map">
+            <image src="    "></image>
+        </div>
+        <countdown trip-date="February 11, 2017"></countdown>
     </div>
 
 
