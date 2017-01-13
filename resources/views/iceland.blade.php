@@ -27,21 +27,11 @@
                 <span>February 11, 2017</span>
             </div>
         </div>
-        <div class="map">
-            <image src="    "></image>
-        </div>
         <countdown trip-date="February 11, 2017"></countdown>
     </div>
 
-
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script>
-    window.Laravel = <?php echo json_encode([
-            'csrfToken' => csrf_token(),
-    ]); ?>
-</script>
-<script src="{{ asset('js/iceland.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="{{ asset('js/iceland.js') }}"></script>
 </body>
 </html>

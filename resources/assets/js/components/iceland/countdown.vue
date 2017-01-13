@@ -24,6 +24,9 @@
 
 <script>
     import Vue from 'vue';
+    import Vtouch from 'v-touch';
+    Vue.use(Vtouch);
+
     export default{
         data(){
             return{
@@ -55,7 +58,10 @@
                   'minutes': minutes,
                   'seconds': seconds
                 };
-            }
+            },
+          changePicture() {
+              console.log('i touched it');
+          }
         }
     }
 

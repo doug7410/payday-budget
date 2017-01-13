@@ -18,5 +18,10 @@
     "vue-resource": "^1.0.3",
     "vue-router": "2.0.0",
     "underscore": "1.8.3"
+  },
+  "dependencies": {
+    "hammerjs": "^2.0.8",
+    "v-touch": "^1.1.1",
+    "vue-touch": "^1.1.0"
   }
 }
