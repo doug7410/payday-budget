@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 const hammer = new Hammer(document.getElementById('iceland'));
 const images = [
   '/images/iceland1.jpg',
@@ -36,3 +38,7 @@ hammer.on('swipeleft', () => {
 function updateImage(image){
   $('body').css('background-image', 'url(' + images[currentImage] + ')');
 }
+
+images.forEach((image) => {
+  $.get(image);
+});
