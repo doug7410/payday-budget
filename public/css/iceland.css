@@ -23,8 +23,7 @@ body {
   flex-direction: column;
   -webkit-box-pack: justify;
   justify-content: space-between;
-  height: 100%;
-  background-color: rgba(21, 26, 62, 0.5); }
+  height: 100%; }
 
 .trip-info {
   color: #fff;
