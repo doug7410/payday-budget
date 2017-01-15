@@ -35,6 +35,11 @@ hammer.on('swipeleft', () => {
   updateImage(images[currentImage]);
 });
 
+window.setInterval(() => {
+  (currentImage + 1 === images.length) ? currentImage = 0 : currentImage++;
+  $('body').css('background-image', 'url(' + images[currentImage] + ')');
+}, 10000);
+
 function updateImage(image){
   $('body').css('background-image', 'url(' + images[currentImage] + ')');
 }

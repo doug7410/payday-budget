@@ -58,10 +58,7 @@
                   'minutes': minutes,
                   'seconds': seconds
                 };
-            },
-          changePicture() {
-              console.log('i touched it');
-          }
+            }
         }
     }
 
