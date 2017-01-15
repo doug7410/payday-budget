@@ -13,16 +13,16 @@ const images = [
   '/images/iceland9.jpg',
   '/images/iceland10.jpg',
   '/images/iceland11.jpg',
-  '/images/iceland12.jpg',
-  '/images/iceland13.png',
+  '/images/iceland12.png',
+  '/images/iceland13.jpg',
   '/images/iceland14.jpg',
-  '/images/iceland15.jpg',
-  '/images/iceland16.png'
 ];
 let currentImage = 0;
 
 $(document).ready(() => {
-  $('body').css('background-image', 'url(' + images[currentImage] + ')');
+  const number = getRandomInt(0, images.length - 1);
+  console.log(number);
+  $('body').css('background-image', 'url(' + images[number] + ')');
 });
 
 hammer.on('swiperight', () => {
@@ -37,6 +37,12 @@ hammer.on('swipeleft', () => {
 
 function updateImage(image){
   $('body').css('background-image', 'url(' + images[currentImage] + ')');
+}
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
 }
 
 images.forEach((image) => {

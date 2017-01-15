@@ -13,6 +13,7 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Abel|Courgette" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Josefin+Sans|Nunito|Quicksand|Yanone+Kaffeesatz" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/iceland.css') }}" rel="stylesheet">
@@ -21,7 +22,7 @@
 <body>
     <div id="iceland">
         <div class="trip-info">
-            <h1>Countdown to Iceland!</h1>
+            <h1>Countdown to Iceland</h1>
             <div class="info">
                 <strong>Trip Date: </strong>
                 <span>February 11, 2017</span>
