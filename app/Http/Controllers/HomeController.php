@@ -13,4 +13,9 @@ class HomeController extends Controller
         return view('iceland');
     }
 
+    public function chile()
+    {
+        return view('chile');
+    }
+
 }
