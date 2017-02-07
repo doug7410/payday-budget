@@ -28,7 +28,7 @@
                 <span>February 11, 2017</span>
             </div>
         </div>
-        <countdown trip-date="February 11, 2017"></countdown>
+        <countdown trip-date="February 11, 2017 15:45:00"></countdown>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
