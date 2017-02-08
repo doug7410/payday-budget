@@ -7,3 +7,4 @@ Homestead.yaml
 .env
 /laradock/logs/
 /laradock/logs/nginx/access.log
+/vendor

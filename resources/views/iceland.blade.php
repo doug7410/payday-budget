@@ -32,11 +32,12 @@
                 <strong>Trip Date: </strong>
                 <span id="toggle">{{ $date }}</span>
                 <div id="change-date">
-                    {!! Form::open(['url' => 'iceland/update']) !!}
+                    <form action="iceland/update" method="post">
+                        <input name="_token" type="hidden" value="{{ csrf_token() }}">
                         <label for="trip-date">Date:</label>
                         <input type="text" id="trip-date" name="tripDate" value="{{ $date }}">
                         <button id="set-date">Update</button>
-                    {!! Form::close() !!}
+                    </form>
                 </div>
             </div>
         </div>
