@@ -16,4 +16,5 @@ Route::resource('budget', 'BudgetController');
 Route::resource('/budget/{budgetId}/expenses', 'BudgetExpenseController');
 
 Route::get('iceland', ['uses' => 'HomeController@iceland']);
+Route::post('iceland/update', ['uses' => 'HomeController@icelandUpdate']);
 Route::get('chile', ['uses' => 'HomeController@chile']);
